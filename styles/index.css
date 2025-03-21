@@ -460,11 +460,12 @@
     font-size: 32px;
     color: #00ceb0;
     z-index: 2;
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    animation: floatOut 3s ease-out forwards;
+    opacity: 1;
+    transform-origin: center;
+    animation: gentleSway 4s ease-in-out infinite;
 }
 
+/* Each icon gets slightly different timing */
 .floating-icon:nth-child(1) {
     top: 10%;
     left: -30px;
@@ -474,44 +475,26 @@
 .floating-icon:nth-child(2) {
     top: 80%;
     left: -25px;
-    animation-delay: 0.5s;
+    animation-delay: 0.7s;
 }
 
 .floating-icon:nth-child(3) {
     top: 15%;
     right: -30px;
-    animation-delay: 1s;
+    animation-delay: 1.4s;
 }
 
 .floating-icon:nth-child(4) {
     top: 70%;
     right: -25px;
-    animation-delay: 1.5s;
+    animation-delay: 2.1s;
 }
 
-@keyframes floatOut {
-    0% {
-        opacity: 0;
-        transform: translate(50%, 50%) scale(0.5);
-    }
-    50% {
-        opacity: 1;
-        transform: translate(0, 0) scale(1.2);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(0, 0) scale(1);
-        animation: float 3s ease-in-out infinite;
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translate(0, 0);
-    }
-    50% {
-        transform: translate(0, -10px);
-    }
+@keyframes gentleSway {
+    0% { transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(3deg) translateY(-5px); }
+    75% { transform: rotate(-3deg) translateY(5px); }
+    100% { transform: rotate(0deg) translateY(0); }
 }
 
 @media (max-width: 992px) {
