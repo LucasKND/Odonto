@@ -1,0 +1,144 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #00d3c0;
+    color: white;
+    text-align: center;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Logo Styles */
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 5px;
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Footer Text */
+.footer-text {
+    margin-bottom: 25px;
+}
+
+.footer-text p {
+    margin-bottom: 5px;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: #00d3c0;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    background-color: #f0f0f0;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 15px;
+    }
+    
+    .social-icons {
+        margin-bottom: 30px;
+    }
+}
+
+.footer-text .btn-footer {
+    margin-top: 20px;
+    background-color: transparent;
+}
+
+.btn-footer {
+    padding: 0.8em 1.8em;
+    border: 2px solid #ffffff;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-footer::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #ffffff;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.btn-footer:hover::before {
+    width: 105%;
+}
+
+.btn-footer:hover {
+    color: #00ceb0;
+}
